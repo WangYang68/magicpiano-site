@@ -64,13 +64,120 @@
 
 ### 方式 B · 通过 Git 自动部署（推荐长期使用）
 
-1. 把 `E:\MagicPiano\html` 目录传到 GitHub / GitLab 一个仓库（例如 `yourname/magicpiano-site`）。
-2. Cloudflare 控制台 → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**。
-3. 选你的仓库 → **Set up builds and deployments**：
-   - **Framework preset**：`None`
-   - **Build command**：留空
-   - **Build output directory**：填 `/` 或 `.`（即仓库根目录，因为 `index.html` 在根目录）
-4. 点 **Save and Deploy**，Cloudflare 会自动部署。以后在仓库里 push 改动的文件，网站自动更新。
+> ⚠️ **Cloudflare Pages 只认 GitHub 和 GitLab**，不支持 Gitee / 码云 / Bitbucket。
+> 你的 `E:\MagicPiano` 仓库远端是 Gitee，所以官网**必须单独建一个 GitHub 仓库**（已完成，见下面第 1 步）。
+>
+> ⚠️ **用了 Git 集成就不能再切回直传**（官方限制）。想保留直传能力就别走这条路。
+
+#### B-0 · 本地仓库（✅ 已完成）
+
+`E:\MagicPiano\html` 已经是独立 Git 仓库，27 个文件、1 次提交、分支 `main`。
+父仓库 `E:\MagicPiano` 的 `.gitignore` 已加 `html/`，两个仓库互不干扰。
+
+```
+git log --oneline -1
+# 46b2334 feat: 魔琴 MagicPiano 官网首版（静态站 · Cloudflare Pages）
+```
+
+#### B-1 · 先把 GitHub 切成中文界面（可选，1 分钟）
+
+GitHub 网页端原生支持简体中文，不用装插件：
+
+- 右上角头像 → **Settings** → 左侧 **Appearance** → **Language** → 选 **简体中文** → **Save preferences**
+- 或者把浏览器首选语言设为「中文（简体）」并重启浏览器，GitHub 会自动跟随
+
+> Cloudflare 控制台也能切中文：右上角头像 → **My Profile**？不需要，直接：右上角头像 → **Language** 下拉选 **简体中文**。
+
+#### B-2 · 在 GitHub 建一个空仓库
+
+1. 登录 [github.com](https://github.com)（你的账号是 **WangYang68**）。
+2. 右上角 **+** → **New repository**（新建仓库）。
+3. 填：
+   - **Repository name**：`magicpiano-site`
+   - **Public**（公开，Pages 免费版私有仓库也能用，但公开更简单）
+   - **不要**勾选 Add a README / .gitignore / license —— 保持**完全空仓库**
+4. 点 **Create repository**。
+5. 建好后会显示一个以 `https://github.com/WangYang68/magicpiano-site.git` 结尾的地址，**复制它**。
+
+#### B-3 · 把本地仓库推上去
+
+在 `E:\MagicPiano\html` 里执行（把地址换成你自己的）：
+
+```bash
+git remote add origin https://github.com/WangYang68/magicpiano-site.git
+git push -u origin main
+```
+
+第一次 push 会弹窗让你登录 GitHub（浏览器授权，或输用户名 + **Personal Access Token**）。
+
+> **密码填什么**：GitHub 从 2021 年起不再接受账号密码，命令行要用 **Token**。
+> 生成：GitHub → 头像 → **Settings** → 左侧最下面 **Developer settings** → **Personal access tokens** → **Tokens (classic)** → **Generate new token (classic)** → 勾选 `repo` → 生成后**复制保存**（只显示一次）。弹窗要密码时贴这个 Token。
+>
+> **嫌麻烦就用 GitHub Desktop**（见 B-3 备用方案），它是图形界面、中文、自动处理登录。
+
+<details>
+<summary><b>B-3 备用：用 GitHub Desktop（全中文图形界面，不用命令行）</b></summary>
+
+1. 下载安装 [GitHub Desktop](https://desktop.github.com/)（Windows 版跟随系统语言，你系统是中文它就是中文）。
+2. 打开后 **File → Add local repository**（添加本地仓库）→ 选 `E:\MagicPiano\html`。
+3. 它会提示「这个目录已经是 Git 仓库」，直接确认。
+4. 顶部菜单 **Repository → Repository settings → Remote** → 填 B-2 第 5 步复制的地址 → Save。
+5. 点顶部 **Push origin**（推送），第一次会让你登录 GitHub 授权，跟着点就行。
+6. 左下角 History 里能看到那条提交，网页刷新仓库就能看到 27 个文件。
+
+以后更新：改完文件 → Desktop 左下角填 Summary → **Commit to main** → **Push origin**。
+</details>
+
+#### B-4 · Cloudflare 连接这个仓库
+
+**情况一：你还没建 Pages 项目**
+
+1. Cloudflare → **Workers & Pages** → **Create** → **Pages** 标签 → **Connect to Git**。
+2. 点 GitHub 图标 → **Install & Authorize**（授权 Cloudflare 访问 GitHub）。
+3. 选 `magicpiano-site` 仓库 → **Begin setup**。
+
+**情况二：你已经用方式 A 建过项目了**
+
+1. 进那个项目 → **Settings** → **Builds & deployments** → **Git Repository** 那行点 **Manage / Connect**。
+2. 授权 GitHub 并选 `magicpiano-site`。
+3. 绑定后，以后部署来源就变成 Git 了（**不可逆回直传**）。
+
+#### B-5 · 构建配置（照抄，别改）
+
+| 字段 | 填什么 | 为什么 |
+|---|---|---|
+| Project name | `magicpiano` | 决定 `xxx.pages.dev` 的名字 |
+| Production branch | `main` | 推到这个分支才更新正式站 |
+| Framework preset | **`None`** | 纯静态，不需要框架 |
+| Build command | **留空** | 没有构建步骤 |
+| Build output directory | **`/`** | `index.html` 就在仓库根目录 |
+| Root directory | 留空 | 同上 |
+
+点 **Save and Deploy**，等 1 分钟左右，状态变 ✅ Success 就上线了。
+
+#### B-6 · 以后怎么改网站
+
+```bash
+cd E:\MagicPiano\html
+# 改文件……
+git add -A
+git commit -m "更新下载链接"
+git push
+```
+
+推完 30–90 秒，站点自动更新。Cloudflare 项目页能看到每次部署记录和对应的 commit。
+
+> 想跳过某次部署：在 commit 信息开头加 `[skip ci]`，如 `git commit -m "[skip ci] 改个错别字"`。
+
+#### B-7 · 常见问题
+
+| 现象 | 原因 / 解决 |
+|---|---|
+| `git push` 提示认证失败 | 密码要用 **Token** 不是账号密码；或改用 GitHub Desktop |
+| Cloudflare 里看不到仓库 | 授权时没勾选这个仓库 → GitHub → Settings → Applications → **Cloudflare Pages** → Configure → 勾选它 |
+| 部署成功但页面 404 | Build output directory 不是 `/`，或 `index.html` 不在仓库根 |
+| 提示 "repository is being used by another account" | 这个仓库已绑到别的 Cloudflare 账号，换个仓库名 |
+| 中文文件名乱码 | 提交前执行 `git config --global core.quotepath false`（只是显示问题，不影响部署） |
 
 ---
 
