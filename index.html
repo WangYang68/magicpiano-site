@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魔琴 MagicPiano — 把 MIDI 变成游戏里的琴键</title>
+<meta name="description" content="魔琴 MagicPiano 是一款为游戏音乐演奏而生的 MIDI 自动演奏器。内置 17 种游戏按键模式、云端曲库、悬浮小窗、12 调号转调、Win + Android 双端，支持简繁英三语。">
+<meta name="keywords" content="魔琴,MagicPiano,MIDI演奏器,游戏弹琴,自动演奏,永劫无间弹琴,原神弹琴,第五人格弹琴,光遇弹琴,MIDI转按键,燕云十六声弹琴">
+<meta name="author" content="MagicPiano">
+<meta name="theme-color" content="#0d1117">
+
+<!-- Open Graph / 社交分享 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="魔琴 MagicPiano">
+<meta property="og:title" content="魔琴 MagicPiano — 把 MIDI 变成游戏里的琴键">
+<meta property="og:description" content="17 种游戏按键模式、云端曲库、悬浮小窗、12 调号转调、Win + Android 双端。">
+<meta property="og:image" content="https://magicpiano.eu.cc/assets/img/og-image.png">
+<meta property="og:url" content="https://magicpiano.eu.cc/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="魔琴 MagicPiano">
+<meta name="twitter:description" content="17 种游戏按键模式、云端曲库、悬浮小窗、Win + Android 双端。">
+<meta name="twitter:image" content="https://magicpiano.eu.cc/assets/img/og-image.png">
+
+<link rel="icon" href="assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="canonical" href="https://magicpiano.eu.cc/">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home">
+      <img src="assets/img/logo.png" alt="魔琴 MagicPiano Logo" class="brand-logo">
+      <span class="brand-text">
+        <strong data-i18n="brand.name">魔琴</strong>
+        <em>MagicPiano</em>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-i18n="nav.home" class="active">首页</a>
+      <a href="#features" data-i18n="nav.features">功能</a>
+      <a href="#games" data-i18n="nav.games">游戏支持</a>
+      <a href="#gallery" data-i18n="nav.gallery">界面预览</a>
+      <a href="#advanced" data-i18n="nav.advanced">进阶玩法</a>
+      <a href="#download" data-i18n="nav.download">下载</a>
+      <a href="#community" data-i18n="nav.community">交流频道</a>
+      <a href="#faq" data-i18n="nav.faq">常见问题</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="语言切换">
+        <button type="button" data-lang-btn="zh-CN" class="active">简</button>
+        <button type="button" data-lang-btn="zh-TW">繁</button>
+        <button type="button" data-lang-btn="en">EN</button>
+      </div>
+      <a href="#download" class="btn btn-sm btn-primary" data-i18n="nav.cta">下载客户端</a>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+    <div class="keys-rain" id="keysRain"></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <span class="badge">
+        <i class="dot"></i>
+        <span data-i18n="hero.badge">v3.1.11 已发布 · Windows 10+ / Android</span>
+      </span>
+
+      <h1 class="hero-title">
+        <span data-i18n="hero.title1">把 MIDI，</span><br>
+        <span class="grad" data-i18n="hero.title2">变成游戏里的琴键</span>
+      </h1>
+
+      <p class="hero-sub" data-i18n="hero.sub">
+        魔琴 MagicPiano 是一款为游戏音乐演奏而生的 MIDI 自动演奏器。导入曲谱、选好键位、按下播放，
+        它就把每一个音符翻译成游戏里真实的按键 —— 17 种游戏按键模式开箱即用，云端曲库随取随弹。
+      </p>
+
+      <div class="hero-cta">
+        <a href="#download" class="btn btn-primary btn-lg">
+          <svg viewBox="0 0 24 24" class="ico"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-i18n="hero.cta1">免费下载</span>
+        </a>
+        <a href="#features" class="btn btn-ghost btn-lg" data-i18n="hero.cta2">看看能做什么</a>
+      </div>
+
+      <ul class="hero-meta">
+        <li data-i18n="hero.meta1">新用户 10 分钟免费试用</li>
+        <li data-i18n="hero.meta2">简 / 繁 / 英 三语界面</li>
+        <li data-i18n="hero.meta3">Windows + Android 双端</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <div class="app-window">
+        <div class="app-titlebar">
+          <span class="tl-dot red"></span><span class="tl-dot yellow"></span><span class="tl-dot green"></span>
+          <span class="tl-title">魔琴 MagicPiano</span>
+        </div>
+        <div class="app-body">
+          <div class="app-row">
+            <span class="app-chip active" data-i18n="demo.cloud">云音乐</span>
+            <span class="app-chip" data-i18n="demo.local">本地音乐</span>
+            <span class="app-chip" data-i18n="demo.fav">我的收藏</span>
+            <span class="app-search"></span>
+          </div>
+          <div class="app-list">
+            <div class="app-item playing"><span class="eq"><i></i><i></i><i></i><i></i></span><span class="t">花下舞剑</span><span class="d">03:45</span></div>
+            <div class="app-item"><span class="idx">02</span><span class="t">菊次郎的夏天</span><span class="d">04:12</span></div>
+            <div class="app-item"><span class="idx">03</span><span class="t">天空之城</span><span class="d">03:08</span></div>
+            <div class="app-item"><span class="idx">04</span><span class="t">起风了</span><span class="d">05:26</span></div>
+            <div class="app-item"><span class="idx">05</span><span class="t">大鱼</span><span class="d">04:03</span></div>
+          </div>
+          <div class="app-progress"><i style="width:42%"></i></div>
+          <div class="app-controls">
+            <span class="ctrl">⏮</span><span class="ctrl main">⏸</span><span class="ctrl">⏭</span>
+            <span class="spd">1.0x</span><span class="mode">C</span>
+          </div>
+          <div class="app-keys" id="appKeys"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap stats">
+    <div class="stat"><b data-count="17">17</b><span data-i18n="stats.games">游戏按键模式</span></div>
+    <div class="stat"><b data-count="3">3</b><span data-i18n="stats.lang">界面语言</span></div>
+    <div class="stat"><b data-count="2.0">2.0</b><span data-i18n="stats.speed">最高倍速 (x)</span></div>
+    <div class="stat"><b data-count="10">10</b><span data-i18n="stats.trial">分钟免费试用</span></div>
+  </div>
+</section>
+
+<!-- ============ 核心功能 ============ -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="features.eyebrow">核心功能</span>
+      <h2 data-i18n="features.title">为「弹琴」这件事，把每一处都做到顺手</h2>
+      <p data-i18n="features.desc">从选曲、键位、播放到悬浮小窗，魔琴覆盖了游戏弹琴的完整链路。</p>
+    </div>
+
+    <div class="grid grid-3">
+      <article class="card reveal">
+        <div class="card-ico blue">🎮</div>
+        <h3 data-i18n="f1.t">17 种游戏按键模式</h3>
+        <p data-i18n="f1.d">从通用 21/22 键，到 36/37 键专业布局，永劫无间、燕云十六声、逆水寒、第五人格、原神、光遇、Roblox……选一次即可，键位自动映射。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-ico blue">☁️</div>
+        <h3 data-i18n="f2.t">云端曲库，随取随弹</h3>
+        <p data-i18n="f2.d">联网即可浏览海量 MIDI 曲谱，支持简体 / 繁体 / 英文关键词互搜，分页浏览、一键收藏、自动记录最近播放。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-ico blue">🎚️</div>
+        <h3 data-i18n="f3.t">精准播放控制</h3>
+        <p data-i18n="f3.d">播放 / 暂停 / 上下曲、进度条任意拖拽、0.5x–2.0x 无级变速、单音轨独奏、顺序与单曲循环，全部可在演奏中实时调整。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-ico orange">🪟</div>
+        <h3 data-i18n="f4.t">悬浮小窗 + 窗口置顶</h3>
+        <p data-i18n="f4.d">把播放器收成一个常驻小窗，切歌、调速、看进度、切音轨都在游戏里完成，不用切回桌面。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-ico orange">🎹</div>
+        <h3 data-i18n="f5.t">12 调号自由转调</h3>
+        <p data-i18n="f5.d">曲子音域不对？一键转调到任意调号，让旋律严丝合缝地落进游戏有限的琴键范围内。</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-ico purple">📱</div>
+        <h3 data-i18n="f6.t">Windows + Android 双端</h3>
+        <p data-i18n="f6.d">PC 端做主力、手机端随时补弹。同一账号互通收藏与最近播放，安卓版已上线，键位云端同步。</p>
+      </article>
+    </div>
+
+    <!-- 快捷键 -->
+    <div class="hotkeys reveal">
+      <h3 data-i18n="hk.title">全局热键（可自定义）</h3>
+      <p class="muted" data-i18n="hk.desc">游戏全屏时也能盲操，所有热键都支持在设置里重新绑定。</p>
+      <div class="hk-list">
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>F9</kbd><em data-i18n="hk.play">播放 / 暂停</em></div>
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>F10</kbd><em data-i18n="hk.prev">上一首</em></div>
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>F11</kbd><em data-i18n="hk.next">下一首</em></div>
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>←</kbd><em data-i18n="hk.slower">减速</em></div>
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>→</kbd><em data-i18n="hk.faster">加速</em></div>
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>Insert</kbd><em data-i18n="hk.fav">收藏</em></div>
+        <div class="hk"><kbd>Shift</kbd><span>+</span><kbd>Delete</kbd><em data-i18n="hk.del">删除</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 游戏支持 ============ -->
+<section class="section alt" id="games">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="games.eyebrow">游戏支持</span>
+      <h2 data-i18n="games.title">开箱即用的 17 套键位</h2>
+      <p data-i18n="games.desc">覆盖市面上主流的「能弹琴」的游戏。每套键位都按游戏内实际布局调过，切换即生效。不指定游戏、按键一样的也能用。</p>
+    </div>
+
+    <div class="game-grid">
+      <div class="game-item reveal"><b data-i18n="g1">通用 21 键（QWERTY 三排）</b><span>21 keys</span></div>
+      <div class="game-item reveal"><b data-i18n="g2">通用 21 键（数字 1-7 起手）</b><span>21 keys</span></div>
+      <div class="game-item reveal"><b data-i18n="g3">通用 22 键</b><span>22 keys</span></div>
+      <div class="game-item reveal"><b data-i18n="g4">永劫无间 · 大师模式</b><span>Naraka</span></div>
+      <div class="game-item reveal"><b data-i18n="g5">燕云十六声 / 异环 36 键</b><span>36 keys</span></div>
+      <div class="game-item reveal"><b data-i18n="g6">逆水寒手游 · 专业版</b><span>Justice Pro</span></div>
+      <div class="game-item reveal"><b data-i18n="g7">第五人格 36 键</b><span>Identity V</span></div>
+      <div class="game-item reveal"><b data-i18n="g8">心动小镇 37 键</b><span>Heartopia</span></div>
+      <div class="game-item reveal"><b data-i18n="g9">黎明觉醒 · 钢琴</b><span>Undawn</span></div>
+      <div class="game-item reveal"><b data-i18n="g10">明日之后 · 钢琴全键</b><span>LifeAfter</span></div>
+      <div class="game-item reveal"><b data-i18n="g11">原神 · 圆号 / 吉他</b><span>Genshin</span></div>
+      <div class="game-item reveal"><b data-i18n="g12">光遇 15 键</b><span>Sky</span></div>
+      <div class="game-item reveal"><b data-i18n="g13">七日世界 · 钢琴</b><span>Once Human</span></div>
+      <div class="game-item reveal"><b data-i18n="g14">和平精英 · 钢琴</b><span>Game for Peace</span></div>
+      <div class="game-item reveal"><b data-i18n="g15">Roblox 钢琴</b><span>Roblox Piano</span></div>
+      <div class="game-item reveal"><b data-i18n="g16">RAFT 钢琴</b><span>Raft</span></div>
+      <div class="game-item reveal"><b data-i18n="g17">SCUM</b><span>SCUM</span></div>
+    </div>
+
+    <p class="note" data-i18n="games.note">
+      没找到你的游戏？用「通用 21/22 键」模式自定义键位，或者只要游戏里的琴键布局和上面任一套一致就能直接用。
+    </p>
+  </div>
+</section>
+
+<!-- ============ 界面预览（轮播图） ============ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="gal.eyebrow">界面预览</span>
+      <h2 data-i18n="gal.title">先看眼再下载</h2>
+      <p data-i18n="gal.desc">Windows PC 端 · Android 端 · 简繁英三语，一次看全。</p>
+    </div>
+
+    <div class="carousel reveal" id="galleryCarousel" data-autoplay="4500">
+      <div class="car-stage">
+        <button class="car-arrow car-prev" id="carPrev" type="button" aria-label="上一张">
+          <svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <a class="car-frame" id="carFrame" href="img/PC_cn.png" target="_blank" rel="noopener">
+          <img id="carImg" src="img/PC_cn.png" alt="MagicPiano 软件截图" loading="eager" decoding="async">
+        </a>
+        <button class="car-arrow car-next" id="carNext" type="button" aria-label="下一张">
+          <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="car-cap">
+          <span class="car-cap-tag" data-i18n="gal.capTag">界面</span>
+          <span class="car-cap-text" id="carCap">简体中文 · 游戏按键</span>
+        </div>
+        <div class="car-count"><span id="carCur">1</span><em>/</em><span id="carTotal">9</span></div>
+      </div>
+      <div class="car-thumbs" id="carThumbs"></div>
+      <div class="car-dots" id="carDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 进阶玩法 ============ -->
+<section class="section alt" id="advanced">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="adv.eyebrow">进阶玩法</span>
+      <h2 data-i18n="adv.title">不止是「放一首曲子」</h2>
+    </div>
+
+    <div class="grid grid-2">
+      <article class="card flat reveal">
+        <h3 data-i18n="a1.t">🎵 定时播放</h3>
+        <p data-i18n="a1.d">设定时间自动开播，活动开场、挂机演奏都省心。</p>
+      </article>
+      <article class="card flat reveal">
+        <h3 data-i18n="a2.t">🎯 练习曲解锁（燕云、永劫）</h3>
+        <p data-i18n="a2.d">燕云十六声、永劫无间等游戏内的练习曲专题上线，按游戏分类整理，跟着把游戏里的曲子全弹一遍。</p>
+      </article>
+      <article class="card flat reveal">
+        <h3 data-i18n="a3.t">🎛️ MIDI 设备输出</h3>
+        <p data-i18n="a3.d">支持外接 MIDI 设备与虚拟通道，软硬结合随便搭。</p>
+      </article>
+      <article class="card flat reveal">
+        <h3 data-i18n="a4.t">🔁 自动检查更新</h3>
+        <p data-i18n="a4.d">启动自动检测新版本，也可以手动点一下立刻检查。</p>
+      </article>
+      <article class="card flat reveal">
+        <h3 data-i18n="a5.t">🌐 简繁英三语</h3>
+        <p data-i18n="a5.d">界面随时切换简体中文、繁体中文、英文，搜索也支持简繁互通。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 下载 ============ -->
+<section class="section" id="download">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="dl.eyebrow">下载</span>
+      <h2 data-i18n="dl.title">一分钟装好，马上能弹</h2>
+      <p data-i18n="dl.desc">客户端为纯本地程序，不写注册表、不捆绑任何东西。下载后用管理员权限运行即可。</p>
+    </div>
+
+    <div class="dl-card reveal">
+      <div class="dl-main">
+        <div class="dl-ver">
+          <span class="ver-badge">v3.1.11</span>
+          <span class="muted" data-i18n="dl.updated">Windows 版</span>
+          <span class="ver-badge ver-badge-android" data-i18n="dl.android">Android 已上线</span>
+        </div>
+        <h3 data-i18n="dl.name">魔琴 MagicPiano for Windows</h3>
+        <ul class="dl-spec">
+          <li><span data-i18n="dl.s1">系统</span><b>Windows 10 / 11（64 位）</b></li>
+          <li><span data-i18n="dl.s2">权限</span><b data-i18n="dl.s2v">需以管理员身份运行</b></li>
+          <li><span data-i18n="dl.s3">大小</span><b>≈ 60 MB</b></li>
+          <li><span data-i18n="dl.s4">试用</span><b data-i18n="dl.s4v">新用户 10 分钟免费体验</b></li>
+        </ul>
+      </div>
+
+      <div class="dl-mirrors">
+        <p class="muted" data-i18n="dl.pick">选择一个网盘下载 Windows 版（内容相同，挑你顺手的）：</p>
+        <a class="mirror" href="https://pan.xunlei.com/s/VORiuR5V3r6FB4HEP1ZPltj5A1?pwd=5d79" target="_blank" rel="noopener">
+          <span class="m-ico">⚡</span>
+          <span class="m-text"><b data-i18n="dl.xl">迅雷网盘</b><em data-i18n="dl.xl.d">提取码 5d79</em></span>
+          <span class="m-go">→</span>
+        </a>
+        <a class="mirror" href="https://pan.quark.cn/s/2eb6283b36c4" target="_blank" rel="noopener">
+          <span class="m-ico">🔵</span>
+          <span class="m-text"><b data-i18n="dl.qk">夸克网盘</b><em data-i18n="dl.qk.d">免提取码</em></span>
+          <span class="m-go">→</span>
+        </a>
+        <a class="mirror" href="https://pan.baidu.com/s/1PEOtb8WPfP0flqUhc-35yw?pwd=2x82" target="_blank" rel="noopener">
+          <span class="m-ico">📦</span>
+          <span class="m-text"><b data-i18n="dl.bd">百度网盘</b><em data-i18n="dl.bd.d">提取码 2x82</em></span>
+          <span class="m-go">→</span>
+        </a>
+        <a class="mirror mirror-github" href="https://github.com/WangYang68/MagicPiano/releases" target="_blank" rel="noopener">
+          <span class="m-ico m-ico-svg">
+            <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+          </span>
+          <span class="m-text"><b>GitHub Releases</b><em data-i18n="dl.gh.d">全部历史版本 · 更新日志</em></span>
+          <span class="m-go">→</span>
+        </a>
+        <a class="mirror mirror-android" href="#community">
+          <span class="m-ico">📱</span>
+          <span class="m-text"><b data-i18n="dl.android.name">安卓版</b><em data-i18n="dl.android.d">从交流频道获取</em></span>
+          <span class="m-go">→</span>
+        </a>
+      </div>
+    </div>
+
+    <ol class="steps">
+      <li class="reveal"><span>1</span><div><b data-i18n="dl.st1">下载安装包</b><p data-i18n="dl.st1d">从上方任一网盘保存并下载 exe 文件。</p></div></li>
+      <li class="reveal"><span>2</span><div><b data-i18n="dl.st2">以管理员身份运行</b><p data-i18n="dl.st2d">右键 →「以管理员身份运行」。游戏窗口有反作弊保护时，这一步能确保按键正常送达。</p></div></li>
+      <li class="reveal"><span>3</span><div><b data-i18n="dl.st3">注册 / 登录</b><p data-i18n="dl.st3d">用邮箱注册账号并填邀请码，登录后即可开始 10 分钟试用。</p></div></li>
+      <li class="reveal"><span>4</span><div><b data-i18n="dl.st4">选键位，开弹</b><p data-i18n="dl.st4d">挑一个游戏按键模式 → 在云音乐或本地音乐里双击曲目 → 切回游戏窗口，听它弹。</p></div></li>
+    </ol>
+
+    <div class="docs reveal">
+      <p class="docs-tip" data-i18n="dl.docs.tip">装好之后不知道从哪下手？先看这两份说明：</p>
+      <div class="docs-grid">
+        <a class="doc-card" href="https://docs.qq.com/doc/DUFN1bG1JTGV2a2xG" target="_blank" rel="noopener">
+          <span class="doc-ico">📖</span>
+          <span class="doc-text">
+            <b data-i18n="dl.doc1">魔琴 MagicPiano 使用说明</b>
+            <em data-i18n="dl.doc1.d">Windows 端完整教程：安装、注册、选键位、导入曲谱、排障</em>
+          </span>
+          <span class="doc-go">→</span>
+        </a>
+        <a class="doc-card" href="https://docs.qq.com/doc/DUEJWa3Z3UGRBZWdp" target="_blank" rel="noopener">
+          <span class="doc-ico">📱</span>
+          <span class="doc-text">
+            <b data-i18n="dl.doc2">MagicPiano 魔琴安卓版教程</b>
+            <em data-i18n="dl.doc2.d">手机端怎么装、怎么连游戏、悬浮窗怎么调</em>
+          </span>
+          <span class="doc-go">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="invite-box reveal">
+      <div class="ib-ico">🎁</div>
+      <div class="ib-text">
+        <b data-i18n="dl.invite.t">注册时填写邀请码</b>
+        <p data-i18n="dl.invite.d">邀请后可更快找到组织、领取社区福利。进频道向管理员索取最新邀请码。</p>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="copyInvite" data-invite="90afc6c26ec843c2">
+        <span data-i18n="dl.invite.copy">复制邀请码</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 交流频道 ============ -->
+<section class="section alt" id="community">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow" data-i18n="com.eyebrow">社区</span>
+      <h2 data-i18n="com.title">加入交流频道，第一时间拿到新曲与更新</h2>
+      <p data-i18n="com.desc">所有曲谱更新、版本发布、活动福利都在这里第一时间通知。</p>
+    </div>
+
+    <div class="com-grid reveal">
+      <div class="com-qr">
+        <div class="com-qr-frame">
+          <img src="assets/img/qq_guild.jpg" alt="腾讯频道二维码">
+        </div>
+        <span class="com-qr-tip" data-i18n="com.qr">手机扫码 · 微信扫一扫也行</span>
+      </div>
+
+      <div class="com-info">
+        <h3>
+          <span data-i18n="com.kicker">腾讯频道</span>
+          <span class="grad">MagicPiano 魔琴</span>
+        </h3>
+        <p data-i18n="com.info1">17 套游戏键位、海量曲谱、客户端版本、活动福利 —— 全部第一时间发布在频道里。</p>
+
+        <ul class="com-list">
+          <li><span class="com-ico">🎵</span><span data-i18n="com.b1">每日新曲推送，按游戏与难度分门别类</span></li>
+          <li><span class="com-ico">🆕</span><span data-i18n="com.b2">客户端版本与新游戏键位抢先知道</span></li>
+          <li><span class="com-ico">🎁</span><span data-i18n="com.b3">邀请码 / 定制曲谱 / 活动福利放送</span></li>
+          <li><span class="com-ico">💬</span><span data-i18n="com.b4">直接和作者反馈 Bug、报曲、加新键位需求</span></li>
+        </ul>
+
+        <a class="btn btn-primary btn-lg com-cta" href="https://pd.qq.com/s/rm4kx2ru?b=9" target="_blank" rel="noopener">
+          <span data-i18n="com.btn">一键加入频道</span>
+          <span class="com-cta-go">→</span>
+        </a>
+        <p class="com-link muted" data-i18n="com.link">链接：pd.qq.com/s/rm4kx2ru</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="faq.eyebrow">常见问题</span>
+      <h2 data-i18n="faq.title">你可能想先问清楚</h2>
+    </div>
+
+    <div class="faq" id="faqList">
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q1">为什么一定要用管理员权限运行？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a1">游戏窗口通常带有输入保护，普通权限的模拟按键会被拦截。以管理员身份运行魔琴，按键才能稳定送达游戏窗口。右键程序图标选择「以管理员身份运行」即可，也可以在属性里设为默认管理员启动。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q2">支持 macOS 或 Linux 吗？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a2">目前仅支持 Windows 10 及以上版本与 Android。键盘模拟与窗口消息机制依赖 Windows API，macOS 暂无计划；Linux 同样不维护。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q3">点了播放，游戏里没反应怎么办？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a3">按顺序排查：① 确认程序是管理员运行的；② 确认选择的按键模式和游戏里的实际布局一致（不确定就先用通用 21 键试试）；③ 确认游戏窗口是当前活动窗口；④ 部分游戏需要在设置里把演奏键位改成默认。仍不行就把 error_log.txt 发到交流频道里。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q4">云音乐里的曲子打开报错？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a4">云音乐需要先联网下载到本地缓存目录才能播放，网络不稳定时会失败。切换网络后重试即可；若持续报错，把曲名和报错截图发到交流频道里，我们会重新上传该文件。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q5">想弹的歌云曲库里没有？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a5">两种办法：① 在交流频道里报曲名，我们会排期扒谱；② 关注频道里的「燕云/永劫等练习曲解锁」专题，里面已经按游戏整理好了一批曲子。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q6">免费试用期是怎么算的？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a6">新用户注册后即有 10 分钟免费演奏时长，用来验证键位和音效够用了。用完后可通过激活码、邀请好友或社区福利继续获取时长。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q7">会不会被游戏封号？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a7">魔琴只是把 MIDI 音符转换为标准键盘按键输入，不读取、不修改游戏内存与网络数据。但自动演奏在部分游戏中属于灰色地带，请务必先了解并遵守你所玩游戏的规则，由此产生的账号风险由使用者自行承担。</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span data-i18n="q8">曲谱和软件是持续更新的吗？</span><i></i></button>
+        <div class="faq-a"><p data-i18n="a8">是的。软件内置自动更新检测，云曲库也会持续上新。更新日志会在交流频道与软件内「检查更新」中同步公布。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+  <div class="wrap">
+    <h2 data-i18n="cta.title">现在，去游戏里弹一首</h2>
+    <p data-i18n="cta.desc">下载只要一分钟，第一次弹出旋律只要十秒钟。</p>
+    <div class="cta-btns">
+      <a href="#download" class="btn btn-primary btn-lg" data-i18n="cta.btn1">免费下载</a>
+      <a href="https://pd.qq.com/s/rm4kx2ru?b=9" target="_blank" rel="noopener" class="btn btn-ghost btn-lg" data-i18n="cta.btn2">加入交流频道</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="footer" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#home">
+          <img src="assets/img/logo.png" alt="魔琴 MagicPiano" class="brand-logo">
+          <span class="brand-text"><strong data-i18n="brand.name">魔琴</strong><em>MagicPiano</em></span>
+        </a>
+        <p data-i18n="foot.desc">为游戏音乐演奏而生的 MIDI 自动演奏器。让每一个想弹琴的人，都能在游戏里弹出自己喜欢的歌。</p>
+        <p class="muted small" data-i18n="foot.ver">当前版本 v3.1.11 · Windows 10+ / Android</p>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-i18n="foot.nav">导航</h4>
+        <a href="#home" data-i18n="nav.home">首页</a>
+        <a href="#features" data-i18n="nav.features">功能</a>
+        <a href="#games" data-i18n="nav.games">游戏支持</a>
+        <a href="#gallery" data-i18n="nav.gallery">界面预览</a>
+        <a href="#advanced" data-i18n="nav.advanced">进阶玩法</a>
+        <a href="#download" data-i18n="nav.download">下载</a>
+        <a href="#community" data-i18n="nav.community">交流频道</a>
+        <a href="#faq" data-i18n="nav.faq">常见问题</a>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-i18n="foot.contact">联系我们</h4>
+        <a href="mailto:magicpianoplayer@foxmail.com"><span data-i18n="foot.email">邮箱</span><em>magicpianoplayer@foxmail.com</em></a>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-i18n="foot.download">下载镜像</h4>
+        <a href="https://pan.xunlei.com/s/VORiuR5V3r6FB4HEP1ZPltj5A1?pwd=5d79" target="_blank" rel="noopener" data-i18n="dl.xl">迅雷网盘</a>
+        <a href="https://pan.quark.cn/s/2eb6283b36c4" target="_blank" rel="noopener" data-i18n="dl.qk">夸克网盘</a>
+        <a href="https://pan.baidu.com/s/1PEOtb8WPfP0flqUhc-35yw?pwd=2x82" target="_blank" rel="noopener" data-i18n="dl.bd">百度网盘</a>
+        <a href="https://github.com/WangYang68/MagicPiano/releases" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="foot-col">
+        <h4 data-i18n="foot.docs">使用说明</h4>
+        <a href="https://docs.qq.com/doc/DUFN1bG1JTGV2a2xG" target="_blank" rel="noopener" data-i18n="dl.doc1">魔琴 MagicPiano 使用说明</a>
+        <a href="https://docs.qq.com/doc/DUEJWa3Z3UGRBZWdp" target="_blank" rel="noopener" data-i18n="dl.doc2">MagicPiano 魔琴安卓版教程</a>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <b data-i18n="dis.title">使用声明</b>
+      <p data-i18n="dis.text">魔琴 MagicPiano 是一款本地 MIDI 播放与键盘映射工具，仅用于音乐演奏、学习与交流，不读取或修改任何游戏的内存、文件与网络数据。请遵守各游戏的用户协议与相关规定，勿用于竞技对局、代练获利等违反规则的用途。因使用本工具产生的账号风险与后果，由使用者自行承担。</p>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> MagicPiano · <span data-i18n="foot.rights">保留所有权利</span></span>
+      <span class="muted small" data-i18n="foot.built">Built with care, hosted on Cloudflare Pages</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 复制提示 -->
+<div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

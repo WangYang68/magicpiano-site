@@ -1,0 +1,3 @@
+# SPA-friendly 404 fallback. This is a single-page static site with no
+# client-side routing, so no real rewrites are required; keeping this file
+# documented in case a future page is added under a subpath.

@@ -1,0 +1,17 @@
+# WorkBuddy 工作区数据（本地记忆，不上传）
+.workbuddy/
+
+# Python 临时文件
+__pycache__/
+*.pyc
+*.pyo
+
+# 打包产物（pack.py 生成在上一级目录，这里只是保险）
+*.zip
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.log
