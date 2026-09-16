@@ -107,7 +107,7 @@ def make_og():
     f_small = font(FONT_REG, 25)
     f_tag = font(FONT_REG, 22)
 
-    d.text((88, 286), "魔琴 MagicPiano", font=f_big, fill=TEXT + (255,))
+    d.text((88, 286), "魔琴 MagicalPiano", font=f_big, fill=TEXT + (255,))
     d.text((88, 372), "把 MIDI，变成游戏里的琴键", font=f_sub, fill=BLUE + (255,))
 
     chips = ["17 种游戏按键模式", "云端曲库", "悬浮小窗", "12 调号转调", "Win + Android 双端"]

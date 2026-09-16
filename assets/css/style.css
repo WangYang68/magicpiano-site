@@ -1,5 +1,5 @@
 /* ============================================================
-   魔琴 MagicPiano 官网样式
+   魔琴 MagicalPiano 官网样式
    配色沿用客户端：品牌蓝 #409EFF / 强调橙 #FF9800 / 深底 #0d1117
    ============================================================ */
 
@@ -507,6 +507,7 @@ kbd {
 .foot-col a { font-size: 14px; color: var(--text-2); transition: color .2s; display: flex; gap: 8px; align-items: baseline; }
 .foot-col a:hover { color: var(--brand-2); }
 .foot-col a em { font-style: normal; color: var(--text-3); font-size: 13px; }
+.foot-nav-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
 
 .disclaimer {
   margin-top: 46px; padding: 20px 24px; border-radius: var(--radius);

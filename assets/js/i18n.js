@@ -1,5 +1,5 @@
 /* ============================================================
-   魔琴 MagicPiano 官网 · 多语言字典
+   魔琴 MagicalPiano 官网 · 多语言字典
    页面 HTML 中内置简体中文（zh-CN）为默认文案，
    此处提供 繁体中文（zh-TW）与 English（en）的覆盖字典。
    ============================================================ */
@@ -9,8 +9,8 @@ window.MP_I18N = {
   /* ---------------- 繁体中文 ---------------- */
   'zh-TW': {
     doc: {
-      title: '魔琴 MagicPiano — 把 MIDI 變成遊戲裡的琴鍵',
-      desc: '魔琴 MagicPiano 是一款為遊戲音樂演奏而生的 MIDI 自動演奏器。內建 17 種遊戲按鍵模式、雲端曲庫、懸浮小窗、12 調號轉調、Win + Android 雙端，支援簡繁英三語。'
+      title: '魔琴 MagicalPiano — 把 MIDI 變成遊戲裡的琴鍵',
+      desc: '魔琴 MagicalPiano 是一款為遊戲音樂演奏而生的 MIDI 自動演奏器。內建 18 種遊戲按鍵模式、雲端曲庫、懸浮小窗、12 調號轉調、Win + Android 雙端，支援簡繁英三語。'
     },
 
     'brand.name': '魔琴',
@@ -28,7 +28,7 @@ window.MP_I18N = {
     'hero.badge': 'v3.1.11 已發布 · Windows 10+ / Android',
     'hero.title1': '把 MIDI，',
     'hero.title2': '變成遊戲裡的琴鍵',
-    'hero.sub': '魔琴 MagicPiano 是一款為遊戲音樂演奏而生的 MIDI 自動演奏器。匯入曲譜、選好鍵位、按下播放，它就把每一個音符翻譯成遊戲裡真實的按鍵 —— 17 種遊戲按鍵模式開箱即用，雲端曲庫隨取隨彈。',
+    'hero.sub': '魔琴 MagicalPiano 是一款為遊戲音樂演奏而生的 MIDI 自動演奏器。匯入曲譜、選好鍵位、按下播放，它就把每一個音符翻譯成遊戲裡真實的按鍵 —— 18 種遊戲按鍵模式開箱即用，雲端曲庫隨取隨彈。',
     'hero.cta1': '免費下載',
     'hero.cta2': '看看能做什麼',
     'hero.meta1': '新用戶 10 分鐘免費試用',
@@ -48,7 +48,7 @@ window.MP_I18N = {
     'features.title': '為「彈琴」這件事，把每一處都做到順手',
     'features.desc': '從選曲、鍵位、播放到懸浮小窗，魔琴覆蓋了遊戲彈琴的完整鏈路。',
 
-    'f1.t': '17 種遊戲按鍵模式',
+    'f1.t': '18 種遊戲按鍵模式',
     'f1.d': '從通用 21/22 鍵，到 36/37 鍵專業佈局，永劫無間、燕雲十六聲、逆水寒、第五人格、原神、光遇、Roblox……選一次即可，鍵位自動映射。',
     'f2.t': '雲端曲庫，隨取隨彈',
     'f2.d': '聯網即可瀏覽海量 MIDI 曲譜，支援簡體 / 繁體 / 英文關鍵詞互搜，分頁瀏覽、一鍵收藏、自動記錄最近播放。',
@@ -72,7 +72,7 @@ window.MP_I18N = {
     'hk.del': '刪除',
 
     'games.eyebrow': '遊戲支援',
-    'games.title': '開箱即用的 17 套鍵位',
+    'games.title': '開箱即用的 18 套鍵位',
     'games.desc': '覆蓋市面上主流的「能彈琴」的遊戲。每套鍵位都按遊戲內實際佈局調過，切換即生效。不指定遊戲、按鍵一樣的也能用。',
     'g1': '通用 21 鍵（QWERTY 三排）',
     'g2': '通用 21 鍵（數字 1-7 起手）',
@@ -91,6 +91,7 @@ window.MP_I18N = {
     'g15': 'Roblox 鋼琴',
     'g16': 'RAFT 鋼琴',
     'g17': 'SCUM',
+    'g18': '三角洲口琴',
     'games.note': '沒找到你的遊戲？用「通用 21/22 鍵」模式自訂鍵位，或者只要遊戲裡的琴鍵佈局和上面任一套一致就能直接用。',
 
     'gal.eyebrow': '介面預覽',
@@ -116,7 +117,7 @@ window.MP_I18N = {
     'dl.desc': '客戶端為純本地程式，不寫註冊表、不捆綁任何東西。下載後用管理員權限執行即可。',
     'dl.updated': 'Windows 版',
     'dl.android': 'Android 已上線',
-    'dl.name': '魔琴 MagicPiano for Windows',
+    'dl.name': '魔琴 MagicalPiano for Windows',
     'dl.s1': '系統',
     'dl.s2': '權限',
     'dl.s2v': '需以管理員身分執行',
@@ -142,9 +143,9 @@ window.MP_I18N = {
     'dl.st4': '選鍵位，開彈',
     'dl.st4d': '挑一個遊戲按鍵模式 → 在雲端音樂或本地音樂裡雙擊曲目 → 切回遊戲視窗，聽它彈。',
     'dl.docs.tip': '裝好之後不知道從哪下手？先看這兩份說明：',
-    'dl.doc1': '魔琴 MagicPiano 使用說明',
+    'dl.doc1': '魔琴 MagicalPiano 使用說明',
     'dl.doc1.d': 'Windows 端完整教學：安裝、註冊、選鍵位、導入曲譜、疑難排解',
-    'dl.doc2': 'MagicPiano 魔琴安卓版教學',
+    'dl.doc2': 'MagicalPiano 魔琴安卓版教學',
     'dl.doc2.d': '手機端怎麼裝、怎麼連遊戲、懸浮窗怎麼調',
     'dl.invite.t': '註冊時填寫邀請碼',
     'dl.invite.d': '邀請後可更快找到組織、領取社群福利。進頻道向管理員索取最新邀請碼。',
@@ -155,7 +156,7 @@ window.MP_I18N = {
     'com.desc': '所有曲譜更新、版本發布、活動福利都在這裡第一時間通知。',
     'com.qr': '手機掃碼 · 微信掃一掃也行',
     'com.kicker': '騰訊頻道',
-    'com.info1': '17 套遊戲鍵位、海量曲譜、客戶端版本、活動福利 —— 全部第一時間發布在頻道裡。',
+    'com.info1': '18 套遊戲鍵位、海量曲譜、客戶端版本、活動福利 —— 全部第一時間發布在頻道裡。',
     'com.b1': '每日新曲推送，按遊戲與難度分門別類',
     'com.b2': '客戶端版本與新遊戲鍵位搶先知道',
     'com.b3': '邀請碼 / 訂製曲譜 / 活動福利放送',
@@ -198,7 +199,7 @@ window.MP_I18N = {
     'foot.built': 'Built with care, hosted on Cloudflare Pages',
 
     'dis.title': '使用聲明',
-    'dis.text': '魔琴 MagicPiano 是一款本地 MIDI 播放與鍵盤映射工具，僅用於音樂演奏、學習與交流，不讀取或修改任何遊戲的記憶體、檔案與網路資料。請遵守各遊戲的使用者協議與相關規定，勿用於競技對局、代練獲利等違反規則的用途。因使用本工具產生的帳號風險與後果，由使用者自行承擔。',
+    'dis.text': '魔琴 MagicalPiano 是一款本地 MIDI 播放與鍵盤映射工具，僅用於音樂演奏、學習與交流，不讀取或修改任何遊戲的記憶體、檔案與網路資料。請遵守各遊戲的使用者協議與相關規定，勿用於競技對局、代練獲利等違反規則的用途。因使用本工具產生的帳號風險與後果，由使用者自行承擔。',
 
     ui: { copied: '已複製到剪貼簿', invite: '邀請碼已複製' }
   },
@@ -206,11 +207,11 @@ window.MP_I18N = {
   /* ---------------- English ---------------- */
   'en': {
     doc: {
-      title: 'MagicPiano — Turn MIDI into Keys Your Game Understands',
-      desc: 'MagicPiano is a MIDI auto-player built for in-game music performance. 17 game key layouts, a cloud sheet library, a floating mini window, 12-key transposition, Win + Android — with three interface languages.'
+      title: 'MagicalPiano — Turn MIDI into Keys Your Game Understands',
+      desc: 'MagicalPiano is a MIDI auto-player built for in-game music performance. 18 game key layouts, a cloud sheet library, a floating mini window, 12-key transposition, Win + Android — with three interface languages.'
     },
 
-    'brand.name': 'MagicPiano',
+    'brand.name': 'MagicalPiano',
 
     'nav.home': 'Home',
     'nav.features': 'Features',
@@ -225,7 +226,7 @@ window.MP_I18N = {
     'hero.badge': 'v3.1.11 released · Windows 10+ / Android',
     'hero.title1': 'Turn MIDI',
     'hero.title2': 'into keys your game understands',
-    'hero.sub': 'MagicPiano is a MIDI auto-player built for in-game music. Load a song, pick a key layout, hit play — it translates every note into real keystrokes inside your game. 17 game layouts work out of the box, and the cloud library is always within reach.',
+    'hero.sub': 'MagicalPiano is a MIDI auto-player built for in-game music. Load a song, pick a key layout, hit play — it translates every note into real keystrokes inside your game. 18 game layouts work out of the box, and the cloud library is always within reach.',
     'hero.cta1': 'Download free',
     'hero.cta2': 'See what it does',
     'hero.meta1': '10-minute free trial',
@@ -243,9 +244,9 @@ window.MP_I18N = {
 
     'features.eyebrow': 'Features',
     'features.title': 'Built around one thing: playing music in games',
-    'features.desc': 'From picking a song to nailing the key layout, MagicPiano covers the whole loop.',
+    'features.desc': 'From picking a song to nailing the key layout, MagicalPiano covers the whole loop.',
 
-    'f1.t': '17 game key layouts',
+    'f1.t': '18 game key layouts',
     'f1.d': 'From universal 21/22-key schemes to 36/37-key pro layouts — Naraka, Where Winds Meet, Justice, Identity V, Genshin, Sky, Roblox and more. Pick once, mapping is automatic.',
     'f2.t': 'Cloud sheet library',
     'f2.d': 'Browse a large MIDI catalog online. Search works across Simplified Chinese, Traditional Chinese and English, with pagination, favorites and a recent-play history.',
@@ -269,7 +270,7 @@ window.MP_I18N = {
     'hk.del': 'Delete',
 
     'games.eyebrow': 'Supported games',
-    'games.title': '17 layouts ready to go',
+    'games.title': '18 layouts ready to go',
     'games.desc': 'Covering the games people actually play music in. Each layout is tuned to that game\'s real on-screen keyboard — and any game with the same key map works out of the box.',
     'g1': 'Universal 21 keys (three QWERTY rows)',
     'g2': 'Universal 21 keys (starting at 1-7)',
@@ -288,6 +289,7 @@ window.MP_I18N = {
     'g15': 'Roblox Piano',
     'g16': 'Raft Piano',
     'g17': 'SCUM',
+    'g18': 'Delta Harmonica',
     'games.note': 'Game not listed? Use Universal 21/22 to map your own keys — or any game whose keyboard matches one of the layouts above just works.',
 
     'gal.eyebrow': 'Screenshots',
@@ -313,7 +315,7 @@ window.MP_I18N = {
     'dl.desc': 'A fully local app. No registry changes, no bundled extras. Just run it as administrator.',
     'dl.updated': 'Windows build',
     'dl.android': 'Android available',
-    'dl.name': 'MagicPiano for Windows',
+    'dl.name': 'MagicalPiano for Windows',
     'dl.s1': 'OS',
     'dl.s2': 'Privileges',
     'dl.s2v': 'Must run as administrator',
@@ -339,9 +341,9 @@ window.MP_I18N = {
     'dl.st4': 'Pick a layout and play',
     'dl.st4d': 'Choose a game key layout → double-click a track → switch back to the game and listen.',
     'dl.docs.tip': 'Not sure where to start? Read these two guides:',
-    'dl.doc1': 'MagicPiano User Guide (Windows)',
+    'dl.doc1': 'MagicalPiano User Guide (Windows)',
     'dl.doc1.d': 'Full walkthrough: install, register, pick a layout, import sheets, troubleshooting',
-    'dl.doc2': 'MagicPiano Android Guide',
+    'dl.doc2': 'MagicalPiano Android Guide',
     'dl.doc2.d': 'How to install on Android, connect to a game, and set up the floating window',
     'dl.invite.t': 'Use an invite code at signup',
     'dl.invite.d': 'Unlocks community perks and bonus time. Ask an admin in the community for a current code.',
@@ -352,7 +354,7 @@ window.MP_I18N = {
     'com.desc': 'Every sheet update, app release and promo lands here before anywhere else.',
     'com.qr': 'Scan with your phone — WeChat works too',
     'com.kicker': 'QQ Channel',
-    'com.info1': '17 game layouts, the full sheet library, app releases, promos — all posted in the channel first.',
+    'com.info1': '18 game layouts, the full sheet library, app releases, promos — all posted in the channel first.',
     'com.b1': 'New tracks every day, sorted by game and difficulty',
     'com.b2': 'App updates and new game key layouts before they go public',
     'com.b3': 'Invite codes, custom sheets and limited promos',
@@ -363,7 +365,7 @@ window.MP_I18N = {
     'faq.eyebrow': 'FAQ',
     'faq.title': 'Things worth asking first',
     'q1': 'Why does it need administrator privileges?',
-    'a1': 'Game windows usually guard their input pipeline, and simulated keystrokes sent from a normal-privilege process get filtered out. Running MagicPiano as administrator lets the keys through reliably. Right-click the icon → Run as administrator, or set it permanently under Properties → Compatibility.',
+    'a1': 'Game windows usually guard their input pipeline, and simulated keystrokes sent from a normal-privilege process get filtered out. Running MagicalPiano as administrator lets the keys through reliably. Right-click the icon → Run as administrator, or set it permanently under Properties → Compatibility.',
     'q2': 'Is there a macOS or Linux version?',
     'a2': 'Windows 10 and above plus Android. Key simulation and window messaging here depend on Windows APIs, and macOS / Linux are not planned.',
     'q3': 'I pressed play but nothing happens in the game.',
@@ -375,7 +377,7 @@ window.MP_I18N = {
     'q6': 'How does the free trial work?',
     'a6': 'New accounts get 10 minutes of playback right after registration — plenty to verify your layout and sound. After that, top up with an activation code, invites or community perks.',
     'q7': 'Could this get me banned?',
-    'a7': 'MagicPiano only converts MIDI notes into ordinary keyboard input. It does not read or modify any game\'s memory, files or network traffic. That said, automated play sits in a gray area in some titles — check and follow the rules of the game you play. Any account risk is yours to take on.',
+    'a7': 'MagicalPiano only converts MIDI notes into ordinary keyboard input. It does not read or modify any game\'s memory, files or network traffic. That said, automated play sits in a gray area in some titles — check and follow the rules of the game you play. Any account risk is yours to take on.',
     'q8': 'Do the app and the sheet library keep getting updated?',
     'a8': 'Yes. The app checks for updates automatically and the cloud library keeps growing. Changelogs are posted in the channel and available via Check for Updates in the app.',
 
@@ -395,7 +397,7 @@ window.MP_I18N = {
     'foot.built': 'Built with care, hosted on Cloudflare Pages',
 
     'dis.title': 'Disclaimer',
-    'dis.text': 'MagicPiano is a local MIDI playback and key-mapping utility intended for music performance, learning and sharing. It does not read or modify any game\'s memory, files or network data. Please comply with the terms of service of the games you play, and do not use it in competitive matches or for paid boosting. Any account-related consequences are the user\'s own responsibility.',
+    'dis.text': 'MagicalPiano is a local MIDI playback and key-mapping utility intended for music performance, learning and sharing. It does not read or modify any game\'s memory, files or network data. Please comply with the terms of service of the games you play, and do not use it in competitive matches or for paid boosting. Any account-related consequences are the user\'s own responsibility.',
 
     ui: { copied: 'Copied to clipboard', invite: 'Invite code copied' }
   }

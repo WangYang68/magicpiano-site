@@ -1,5 +1,5 @@
 /* ============================================================
-   魔琴 MagicPiano 官网 · 交互脚本
+   魔琴 MagicalPiano 官网 · 交互脚本
    ============================================================ */
 (function () {
   'use strict';
@@ -36,11 +36,11 @@
     // 标题与描述
     if (dict.doc) {
       if (dict.doc.title) document.title = dict.doc.title;
-      else if (lang === 'zh-CN') document.title = '魔琴 MagicPiano — 把 MIDI 变成游戏里的琴键';
+      else if (lang === 'zh-CN') document.title = '魔琴 MagicalPiano — 把 MIDI 变成游戏里的琴键';
       var md = $('meta[name="description"]');
       if (md) {
         if (dict.doc.desc) md.setAttribute('content', dict.doc.desc);
-        else if (lang === 'zh-CN') md.setAttribute('content', '魔琴 MagicPiano 是一款为游戏音乐演奏而生的 MIDI 自动演奏器。内置 17 种游戏按键模式、云端曲库、悬浮小窗、12 调号转调、Win + Android 双端，支持简繁英三语。');
+        else if (lang === 'zh-CN') md.setAttribute('content', '魔琴 MagicalPiano 是一款为游戏音乐演奏而生的 MIDI 自动演奏器。内置 18 种游戏按键模式、云端曲库、悬浮小窗、12 调号转调、Win + Android 双端，支持简繁英三语。');
       }
     }
 
@@ -239,7 +239,15 @@
     });
   }
 
-  $$('[data-copy]').forEach(function (a) {
+  var emailBtn = $('#copyEmail');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      copyText(emailBtn.getAttribute('data-copy'));
+    });
+  }
+
+  $$('[data-copy]:not([id])').forEach(function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();
       copyText(a.getAttribute('data-copy'));
@@ -281,9 +289,9 @@
     { src: 'img/PC_en.png',    cn: 'English · Main UI',         tw: 'English · Main UI',        en: 'English · Main UI' },
     { src: 'img/PC_tw.png',    cn: '繁體中文 · 主介面',         tw: '繁體中文 · 主介面',         en: 'Traditional Chinese · Main UI' },
     { src: 'img/PC_midi.png',  cn: '外设 MIDI 设备选择',       tw: '外設 MIDI 設備選擇',       en: 'External MIDI device picker' },
-    { src: 'img/PC_si.png',    cn: '本地音乐 · 调号窗口',       tw: '本地音樂 · 調號視窗',       en: 'Local music · key signature' },
+    { src: 'img/PC_si.png',    cn: '单音模式',                  tw: '單音模式',                  en: 'Single note mode' },
     { src: 'img/PC_sz.png',    cn: '练习曲 · 燕云/永劫解锁',    tw: '練習曲 · 燕雲/永劫解鎖',    en: 'Practice tracks · Where Winds Meet / Naraka' },
-    { src: 'img/PC_edit.png',  cn: '本地音乐列表',              tw: '本地音樂列表',              en: 'Local music library' },
+    { src: 'img/PC_edit.png',  cn: '升降调&八度调整',              tw: '升降調&八度調整',              en: 'Transpose & Octave' },
     { src: 'img/android1.png', cn: '安卓版 · 本地音乐',         tw: '安卓版 · 本地音樂',         en: 'Android · Local music' },
     { src: 'img/android2.png', cn: '安卓版 · 悬浮窗',           tw: '安卓版 · 懸浮窗',           en: 'Android · Floating window' }
   ];
@@ -376,14 +384,11 @@
       var allDots = dots.children;
       for (var k = 0; k < allDots.length; k++) allDots[k].classList.toggle('active', k === idx);
 
-      // 缩略图自动滚动到可见区
+      // 缩略图自动滚动到可见区（只滚动容器内部，不触发页面跳转）
       var active = allThumbs[idx];
-      if (active && active.scrollIntoView) {
-        try {
-          active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        } catch (e) {
-          active.scrollIntoView();
-        }
+      if (active) {
+        var targetLeft = active.offsetLeft - (thumbs.clientWidth - active.offsetWidth) / 2;
+        thumbs.scrollLeft = Math.max(0, targetLeft);
       }
     }
 

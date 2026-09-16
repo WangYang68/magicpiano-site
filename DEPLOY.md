@@ -1,4 +1,4 @@
-# MagicPiano 官网 · Cloudflare Pages 部署指南
+# MagicalPiano 官网 · Cloudflare Pages 部署指南
 
 > 本目录是 `E:\MagicPiano\html\` 下的官方静态站，**直接上传整个 `html` 文件夹到 Cloudflare Pages 即可上线**。不需要 npm / build / 数据库。
 
